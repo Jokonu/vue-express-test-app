@@ -24,17 +24,17 @@ import AuthenticationService from '@/services/AuthenticationService'
 export default {
   data () {
     return {
-      email: '',
-      password: ''
+      email: 'abc',
+      password: 'jo'
     }
   },
   methods: {
     async register () {
-      await AuthenticationService.register({
+      const response = await AuthenticationService.register({
         email: this.email,
         password: this.password
       })
-      console.log('mail: ', this.email)
+      console.log('Response:' + response.data.message + ' mail: ' + this.email)
     }
   }
 }
